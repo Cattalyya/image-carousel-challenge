@@ -23,6 +23,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-animate.js"   ></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <!-- Google font -->
@@ -46,7 +47,11 @@
     <div class="container top-container" ng-controller="CarouselController">
         <h2>{{title}}</h2>
         <img src="{{currentImgSrc}}" alt="Image" height="300" width="600">
-        <button ng-click="prev()">Prev</button><button ng-click="next()">Next</button>
+        <span class="glyphicon glyphicon-circle-arrow-left" ng-click="prev()"></span><span class="glyphicon glyphicon-circle-arrow-right" ng-click="next()"></span>
+        <div class="row" >
+            <div ng-repeat="indicatorClass in getIndicatorClasses() track by $index" class="{{indicatorClass}} pull-left">
+            </div>
+        </div>
     </div>
 
 
