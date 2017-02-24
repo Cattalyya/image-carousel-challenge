@@ -29,17 +29,25 @@
     <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Questrial">
 
+    <script src="js/carouselController.js"></script> 
+    <link rel="stylesheet" href="css/main.css">
+
 </head>
- <body>
+<body ng-app="mainCarousel" class="carousel-theme">
 
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <div class="navbar-brand">Cattalyya's Carousel </div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="navbar-brand">Cattalyya's Carousel </div>
+            </div>
         </div>
+    </nav>
+
+    <div class="container top-container" ng-controller="CarouselController">
+        <h2>{{title}}</h2>
+        <img src="{{currentImgSrc}}" alt="Image" height="300" width="600">
+        <button ng-click="prev()">Prev</button><button ng-click="next()">Next</button>
     </div>
-</nav>
 
 
 </body>
