@@ -46,12 +46,17 @@
 
     <div class="container top-container" ng-controller="CarouselController">
         <h2>{{title}}</h2>
-        <img src="{{currentImgSrc}}" alt="Image" height="300" width="600">
-        <span class="glyphicon glyphicon-circle-arrow-left" ng-click="prev()"></span><span class="glyphicon glyphicon-circle-arrow-right" ng-click="next()"></span>
-        <div class="row" >
-            <div ng-repeat="indicatorClass in getIndicatorClasses() track by $index" class="{{indicatorClass}} pull-left">
+        <div class="row">
+            <a class="glyphicon glyphicon-circle-arrow-left a-lg prev-btn" ng-click="prev()" ></a>
+            <img src="{{currentImgSrc}}" alt="Image" height="300" width="600">
+            <a class="glyphicon glyphicon-circle-arrow-right a-lg next-btn" ng-click="next()"></a>
+            
+            <div class="indicators">
+                <div ng-repeat="indicatorClass in getIndicatorClasses() track by $index" class="{{indicatorClass}}">
+                </div>
             </div>
-        </div>
+        <div>
+        
     </div>
 
 

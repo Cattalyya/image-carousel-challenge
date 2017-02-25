@@ -1,3 +1,35 @@
 .carousel-theme .top-container {
     padding-top: 60px;
 }
+
+.carousel-theme a {
+
+    text-decoration: none;
+}
+
+.carousel-theme a:hover{
+    color:  #3a3a3a;
+}
+
+.carousel-theme img{
+    position: relative;
+    z-index: -10;
+}
+
+.a-lg {
+    font-size: 30pt;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.prev-btn {
+    margin-right: -50px;
+}
+
+.next-btn {
+    margin-left: -50px;
+}
+
+
+.indicator {
+    margin-top: -20px;
+}
