@@ -51,8 +51,10 @@
             <img src="{{currentImgSrc}}" alt="Image" height="300" width="600">
             <a class="glyphicon glyphicon-circle-arrow-right a-lg next-btn" ng-click="next()"></a>
             
-            <div class="indicators">
-                <div ng-repeat="indicatorClass in getIndicatorClasses() track by $index" class="{{indicatorClass}}">
+            <div class="panel-fixwidth">
+                <div class="indicators">
+                    <div ng-repeat="indicatorClass in getIndicatorClasses() track by $index" class="{{indicatorClass}} indicator" ng-click="selectImage($index)">
+                    </div>
                 </div>
             </div>
         <div>

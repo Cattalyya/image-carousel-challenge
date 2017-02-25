@@ -29,7 +29,20 @@
     margin-left: -50px;
 }
 
+.indicators {
+    margin: 0 auto;
+    display:block;
+    text-align: center;
+}
 
-.indicator {
-    margin-top: -20px;
+.carousel-theme .panel-fixwidth{
+    width: 600px;
+}
+
+.carousel-theme .fa-circle-o, .fa-circle {
+    color: rgba(150, 150, 150, 0.74);
+}
+
+.carousel-theme .fa-circle-o:hover, .fa-circle:hover {
+    color: rgba(86, 86, 86, 0.74);
 }

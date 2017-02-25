@@ -46,4 +46,10 @@ angular.module('mainCarousel',[]).controller('CarouselController', function ($sc
       return tmp;
   };
 
+  $scope.selectImage = function(index){
+      selectedIndex = index;
+      console.log("select", index)
+      update();
+  }
+
 });
