@@ -1,3 +1,4 @@
+
 angular.module('mainCarousel',[]).controller('CarouselController', function ($scope) {
 
   var imageFolderPath = "img/";
@@ -5,10 +6,10 @@ angular.module('mainCarousel',[]).controller('CarouselController', function ($sc
 
   var DEFAULT_SELECTED_IMAGE_INDEX = 0;
   var selectedIndex;
-  
-  $scope.totalImages = 0;
-  $scope.currentImgSrc = null;
-  $scope.title = "KitCat Photography Album"
+
+  $scope.totalImages = 0;       // total number of images
+  $scope.currentImgSrc = null;  // source path of a current image
+  $scope.title = "KitCat Photography Album" // title of carousel
 
   var initialize = function(){
       $scope.totalImages = imageFilenames.length;
@@ -22,11 +23,17 @@ angular.module('mainCarousel',[]).controller('CarouselController', function ($sc
 
   initialize();
 
+  /**
+   * Display the next image
+   */
   $scope.next = function() {
       selectedIndex = (selectedIndex+1) % $scope.totalImages;
       update();
   };  
 
+  /**
+   * Display the previous image
+   */
   $scope.prev = function() {
       if (selectedIndex == 0) {
           selectedIndex = $scope.totalImages-1;
@@ -36,6 +43,11 @@ angular.module('mainCarousel',[]).controller('CarouselController', function ($sc
       update();
   }; 
 
+  /**
+   * Provide list of css class of each indicator to differentiate between 
+   * active indicator, representing a currently displayed images, and inactive indicator.
+   * @return {[String]} css class of all indicators 
+   */
   $scope.getIndicatorClasses= function(){
       var tmp= imageFilenames.map( function(element, index){
           if (index == selectedIndex){
@@ -46,6 +58,10 @@ angular.module('mainCarousel',[]).controller('CarouselController', function ($sc
       return tmp;
   };
 
+  /**
+   * Display an image that match the index
+   * @param  {[Number]} integer index of image we want to display; 0 <= index < totalImages
+   */
   $scope.selectImage = function(index){
       selectedIndex = index;
       console.log("select", index)
